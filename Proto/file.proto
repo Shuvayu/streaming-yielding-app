@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package file.v1;
+
+service File {
+  rpc GetFileData (google.protobuf.Empty) returns (stream FileLinesReply);
+}
+
+message FileLinesReply {
+  string line = 1;
+}
